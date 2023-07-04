@@ -17,9 +17,10 @@
 }
 
 body {
+  font-family: sharp-sans;
     background-image: url('../../public/vector-bg.svg');
-    background-color: #080712; /* Replace with your desired color */
+    background-color: #080712; 
     background-repeat: repeat-y;
-    background-size: 40%;
-    background-position: top -5vh right -20vh;
+    background-size: 75vh;
+    background-position: top -5vh right -30vh;
 }
