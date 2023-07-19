@@ -22,10 +22,10 @@ import Logo from "../../public/logo.svg";
 import { makeStyles } from "@mui/styles";
 import Image from "next/image";
 import localFont from "next/font/local";
-import { Link } from "react-router-dom";
+import { pages } from "component/app/contants";
+import Link from "next/link";
 
 const myFont = localFont({ src: "../styles/fonts/SharpSansLight.otf" });
-const pages = ["About us", "Services", "Media", "Careers", "Contact"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 export function ResponsiveAppBar() {
@@ -59,7 +59,7 @@ export function ResponsiveAppBar() {
                 py: "20px",
                 backgroundColor: "transparent",
             }}
-            position="static"
+            // position="static"
         >
             <Container sx={{ flexGrow: 1, maxWidth: "100vw" }} maxWidth={false}>
                 <Toolbar>
@@ -68,7 +68,7 @@ export function ResponsiveAppBar() {
                             display: { xs: "none", md: "flex" },
                         }}
                     >
-                        <Link to={"/About us"}>
+                        <Link href={"/about"}>
                             <Image
                                 src={Logo}
                                 alt="123"
@@ -119,7 +119,7 @@ export function ResponsiveAppBar() {
                                         fontFamily={myFont.style.fontFamily}
                                         textAlign="center"
                                     >
-                                        <Link to={`/${page}`}>{page}</Link>
+                                        <Link href={`/${page}`}>{page}</Link>
                                     </Typography>
                                 </MenuItem>
                             ))}
@@ -142,23 +142,25 @@ export function ResponsiveAppBar() {
                         }}
                     >
                         {pages.map((page) => (
-                            <Button
-                                component={Link}
-                                to={`/${page}`}
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{
-                                    my: 4,
-                                    color: "white",
-                                    textTransform: "capitalize",
-                                    display: "block",
-                                    fontWeight: 100,
-                                    fontSize: 16,
-                                    fontFamily: myFont.style.fontFamily,
-                                }}
-                            >
-                                {page}
-                            </Button>
+                            <Link href={`/${page}`} key={page}>
+                                <Button
+                                    // component={Link}
+                                    // to={`/${page}`}
+                                    onClick={handleCloseNavMenu}
+                                    sx={{
+                                        my: 4,
+                                        mx: 2,
+                                        color: "white",
+                                        textTransform: "capitalize",
+                                        display: "block",
+                                        fontWeight: 100,
+                                        fontSize: 16,
+                                        fontFamily: myFont.style.fontFamily,
+                                    }}
+                                >
+                                    {page}
+                                </Button>
+                            </Link>
                         ))}
                     </Box>
 

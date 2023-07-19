@@ -1,34 +1,98 @@
-import { Grid, Paper, styled } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import React from "react";
+import localFont from "next/font/local";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import { pages } from "./contants";
+import Link from "next/link";
+// "xs" - Extra Small < 600
+// "sm" - Small 600 < sm <= 960
+// "md" - Medium 960 < md <= 1280
+// "lg" - Large 1280 < 1920
+// "xl" - Extra Large > 1920
+
+const myFont = localFont({ src: "../styles/fonts/SharpSansSemibold.otf" });
+const thinFont = localFont({ src: "../styles/fonts/SharpSansLight.otf" });
 
 export function Footer() {
-    const Item = styled(Paper)(({ theme }) => ({
-        backgroundColor: "#1A2027",
-        ...theme.typography.body2,
-        padding: theme.spacing(2),
-        textAlign: "center",
-        color: theme.palette.text.secondary,
-    }));
-
     return (
-        <Grid container spacing={3}>
-            <Grid item sm={6} xs={12}>
-                <Item> xs=12 </Item>
+        <Grid p={0} container bgcolor="black" spacing={0}>
+            <Grid p={12} item sm={6} xs={12} md={4} lg={2.8}>
+                {pages.map((page) => (
+                    <Link key={page} href={`/${page}`}>
+                        <Typography
+                            fontSize={15}
+                            lineHeight={2}
+                            color="white"
+                            fontFamily={myFont.style.fontFamily}
+                        >
+                            {page}
+                        </Typography>
+                    </Link>
+                ))}
             </Grid>
-            <Grid item sm={6} xs={6}>
-                <Item>xs=6</Item>
+            <Grid p={12} item sm={6} xs={12} md={4} lg={2.8}>
+                <Typography
+                    fontSize={15}
+                    lineHeight={2}
+                    color="white"
+                    fontFamily={myFont.style.fontFamily}
+                >
+                    Find Us
+                </Typography>
+                <Typography
+                    mt={2}
+                    fontFamily={thinFont.style.fontFamily}
+                    fontSize={15}
+                    color="white"
+                >
+                    702, Galaxy Tower Office, 15th khoroo, Khan-Uul District,
+                    Ulaanbaatar, Mongolia, 17011
+                </Typography>
             </Grid>
-            <Grid item sm={6} xs={6}>
-                <Item>xs=6</Item>
+            <Grid p={12} item sm={6} xs={12} md={4} lg={2.8}>
+                <Typography
+                    fontSize={15}
+                    lineHeight={2}
+                    color="white"
+                    fontFamily={myFont.style.fontFamily}
+                >
+                    Contact Us
+                </Typography>
+                <Typography
+                    mt={2}
+                    fontFamily={thinFont.style.fontFamily}
+                    fontSize={15}
+                    color="white"
+                >
+                    (976) 7000-7222 consulting@farogroup.org
+                </Typography>
             </Grid>
-            <Grid item xs={3}>
-                <Item>xs=3</Item>
+            <Grid p={12} item sm={6} xs={12} md={4} lg={3.5}>
+                <Typography
+                    fontSize={15}
+                    lineHeight={2}
+                    color="white"
+                    fontFamily={myFont.style.fontFamily}
+                >
+                    Follow Us
+                    <InstagramIcon sx={{ ml: 4, color: "#4FCF00" }} />
+                    <FacebookIcon sx={{ ml: 2, color: "#4FCF00" }} />
+                    <LinkedInIcon sx={{ ml: 2, color: "#4FCF00" }} />
+                    <YouTubeIcon sx={{ ml: 2, color: "#4FCF00" }} />
+                </Typography>
             </Grid>
-            <Grid item xs={3}>
-                <Item>xs=3</Item>
-            </Grid>
-            <Grid item xs={6}>
-                <Item>xs=6</Item>
+            <Grid pl={12} pb={4} item sm={6} xs={12} md={4} lg={3.5}>
+                <Typography
+                    mt={2}
+                    fontFamily={thinFont.style.fontFamily}
+                    fontSize={15}
+                    color="white"
+                >
+                    © Faro Consulting 2023.{" "}
+                </Typography>
             </Grid>
         </Grid>
     );

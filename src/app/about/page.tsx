@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";
 import localFont from "next/font/local";
@@ -5,13 +7,14 @@ import Image from "next/image";
 import { Card, CardMedia } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Img from "../../public/needConsulting.png";
+import { Footer } from "../footer";
 
-const myFont = localFont({ src: "../styles/fonts/SharpSansBold.otf" });
-const mediumFont = localFont({ src: "../styles/fonts/SharpSans.otf" });
+const myFont = localFont({ src: "../../styles/fonts/SharpSansBold.otf" });
+const mediumFont = localFont({ src: "../../styles/fonts/SharpSans.otf" });
 const semiboldFont = localFont({
-    src: "../styles/fonts/SharpSansSemibold.otf",
+    src: "../../styles/fonts/SharpSansSemibold.otf",
 });
-const thinFont = localFont({ src: "../styles/fonts/SharpSansLight.otf" });
+const thinFont = localFont({ src: "../../styles/fonts/SharpSansLight.otf" });
 
 const divStyle = {
     backgroundImage: `url("/../public/needConsulting.png")`,
@@ -70,10 +73,9 @@ const datas = [
     },
 ];
 
-export function AboutPage() {
-    const classes = useStyles();
+export default function AboutPage() {
     return (
-        <div>
+        <div style={{ minHeight: "100vh" }}>
             <Box
                 width="100%"
                 display="flex"
@@ -121,6 +123,7 @@ export function AboutPage() {
                         <Image
                             src={"/../public/image1.png"}
                             width={600}
+                            quality={100}
                             height={500}
                             alt="Picture of the author"
                         />
@@ -240,6 +243,7 @@ export function AboutPage() {
                         <Image
                             src={"/../public/image2.png"}
                             width={530}
+                            quality={100}
                             style={{ marginTop: "30px" }}
                             height={800}
                             alt="Picture of the author"
@@ -258,6 +262,7 @@ export function AboutPage() {
                                     width={120}
                                     style={{ marginTop: "30px" }}
                                     height={120}
+                                    quality={100}
                                     alt="Picture of the author"
                                 />
                                 <Box ml="30px">
@@ -287,24 +292,6 @@ export function AboutPage() {
                         ))}
                     </Box>
                 </Box>
-                {/* <Card>
-                    <div className={classes.root}>
-                        <CardMedia
-                            className={classes.media}
-                            image="/../public/needConsulting.png"
-                            title="Your Image"
-                        />
-                        <div className={classes.overlay}>
-                            <Typography
-                                variant="h5"
-                                color="white"
-                                component="h2"
-                            >
-                                Text Overlay
-                            </Typography>
-                        </div>
-                    </div>
-                </Card> */}
             </Box>
             <div className="relative">
                 <Image
@@ -312,6 +299,7 @@ export function AboutPage() {
                     className="object-center object-cover pointer-events-none"
                     src={"/../public/needConsulting.png"}
                     alt={"title"}
+                    quality={100}
                 />
                 <Box
                     pb="8vw"
@@ -319,25 +307,36 @@ export function AboutPage() {
                     pl="8vw"
                     sx={{ zIndex: 10, position: "relative" }}
                 >
-                    <Typography
-                        fontFamily={myFont.style.fontFamily}
-                        fontSize={100}
-                        display="flex"
-                        sx={{ zIndex: 10, position: "relative" }}
-                        color="#FFFFFF"
-                    >
-                        Need{" "}
+                    <Box display="flex">
                         <Typography
                             fontFamily={myFont.style.fontFamily}
                             fontSize={100}
                             display="flex"
-                            ml={"25px"}
+                            sx={{ zIndex: 10, position: "relative" }}
+                            color="#FFFFFF"
+                        >
+                            Need
+                        </Typography>
+                        <Typography
+                            fontFamily={myFont.style.fontFamily}
+                            fontSize={100}
+                            ml={3}
+                            display="flex"
+                            sx={{ zIndex: 10, position: "relative" }}
                             color="#4FCF00"
                         >
                             consult
                         </Typography>
-                        ing?
-                    </Typography>
+                        <Typography
+                            fontFamily={myFont.style.fontFamily}
+                            fontSize={100}
+                            display="flex"
+                            sx={{ zIndex: 10, position: "relative" }}
+                            color="#FFFFFF"
+                        >
+                            ing
+                        </Typography>
+                    </Box>
                     <Typography
                         fontFamily={semiboldFont.style.fontFamily}
                         fontSize={20}
@@ -349,55 +348,7 @@ export function AboutPage() {
                     </Typography>
                 </Box>
             </div>
-            {/* <Box
-                sx={{
-                    backgroundImage: `url(${Img})`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center center",
-                    backgroundSize: "cover",
-                }}
-            >
-                <Image
-                    // layout="responsive"
-                    src={"/../public/needConsulting.png"}
-                    width={1600}
-                    height={531}
-                    alt="Picture of the author"
-                    style={{ zIndex: 0 }}
-                    objectFit="cover"
-                    objectPosition="center"
-                ></Image>
-                <Box sx={{ zIndex: 10, position: "relative" }}>
-                    <Typography
-                        fontFamily={myFont.style.fontFamily}
-                        fontSize={100}
-                        display="flex"
-                        sx={{ zIndex: 10, position: "relative" }}
-                        color="#FFFFFF"
-                    >
-                        Need{" "}
-                        <Typography
-                            fontFamily={myFont.style.fontFamily}
-                            fontSize={100}
-                            display="flex"
-                            ml={"25px"}
-                            color="#4FCF00"
-                        >
-                            consult
-                        </Typography>
-                        ing?
-                    </Typography>
-                    <Typography
-                        fontFamily={semiboldFont.style.fontFamily}
-                        fontSize={20}
-                        display="flex"
-                        pb={0}
-                        color="#FFFFFF"
-                    >
-                        Let us guide you!
-                    </Typography>
-                </Box>
-            </Box> */}
+            <Footer />
         </div>
     );
 }
