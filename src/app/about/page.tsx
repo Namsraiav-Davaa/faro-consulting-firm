@@ -121,7 +121,7 @@ export default function AboutPage() {
                         justifyContent="flex-end"
                     >
                         <Image
-                            src={"/../public/image1.png"}
+                            src={require("../../../public/image1.png")}
                             width={600}
                             quality={100}
                             height={500}
@@ -241,7 +241,7 @@ export default function AboutPage() {
                             our services
                         </Button>
                         <Image
-                            src={"/../public/image2.png"}
+                            src={require("../../../public/image2.png")}
                             width={530}
                             quality={100}
                             style={{ marginTop: "30px" }}
@@ -258,7 +258,9 @@ export default function AboutPage() {
                                 key={item.title}
                             >
                                 <Image
-                                    src={`/../public/item${index + 1}.png`}
+                                    src={require(`../../../public/item${
+                                        index + 1
+                                    }.png`)}
                                     width={120}
                                     style={{ marginTop: "30px" }}
                                     height={120}
@@ -297,7 +299,7 @@ export default function AboutPage() {
                 <Image
                     layout="fill"
                     className="object-center object-cover pointer-events-none"
-                    src={"/../public/needConsulting.png"}
+                    src={require("../../../public/needConsulting.png")}
                     alt={"title"}
                     quality={100}
                 />

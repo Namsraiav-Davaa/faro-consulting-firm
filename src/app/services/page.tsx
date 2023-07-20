@@ -164,9 +164,7 @@ export default function SerVicesPage() {
                                             >
                                                 <div style={{ flexGrow: 0 }}>
                                                     <Image
-                                                        src={
-                                                            "/../public/Ellipse.png"
-                                                        }
+                                                        src={require("../../../public/Ellipse.png")}
                                                         width={26}
                                                         objectFit="contain"
                                                         style={{
@@ -225,9 +223,7 @@ export default function SerVicesPage() {
                                             >
                                                 <div style={{ flexGrow: 0 }}>
                                                     <Image
-                                                        src={
-                                                            "/../public/Ellipse.png"
-                                                        }
+                                                        src={require("../../../public/Ellipse.png")}
                                                         width={26}
                                                         objectFit="contain"
                                                         style={{

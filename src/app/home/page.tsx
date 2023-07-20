@@ -19,6 +19,28 @@ const myFont = localFont({ src: "../../styles/fonts/SharpSansBold.otf" });
 const thinFont = localFont({ src: "../../styles/fonts/SharpSansLight.otf" });
 const Font = localFont({ src: "../../styles/fonts/SharpSansSemibold.otf" });
 
+import colab1 from "../../../public/colab1.png";
+import colab2 from "../../../public/colab2.png";
+import colab3 from "../../../public/colab3.png";
+import colab5 from "../../../public/colab4.png";
+import colab4 from "../../../public/colab5.png";
+import colab6 from "../../../public/colab6.png";
+import colab7 from "../../../public/colab7.png";
+import colab8 from "../../../public/colab8.png";
+import colab9 from "../../../public/colab9.png";
+
+const colabs = [
+    colab1,
+    colab2,
+    colab3,
+    colab4,
+    colab5,
+    colab6,
+    colab7,
+    colab8,
+    colab9,
+];
+
 const services = [
     { text: "Market Penetration Strategy", image: Img1 },
     { text: "Market Development Solutions", image: Img2 },
@@ -71,49 +93,49 @@ const team = [
         first_name: "Byambajargal",
         last_name: "Ayushjav",
         role: "CEO",
-        image: "/../public/bimja.png",
+        image: require("../../../public/bimja.png"),
     },
     {
         first_name: "Khashkhuu",
         last_name: "Tsegmid",
         role: "Consultant",
-        image: "/../public/khashaa.png",
+        image: require("../../../public/khashaa.png"),
     },
     {
         first_name: "Khassod",
         last_name: "Amgalan",
         role: "Financial Consultant",
-        image: "/../public/khasa.png",
+        image: require("../../../public/khasa.png"),
     },
     {
         first_name: "Amartungalag",
         last_name: "Tumurbaatar",
         role: "Data Analyst",
-        image: "/../public/amaaraa.png",
+        image: require("../../../public/amaaraa.png"),
     },
     {
         first_name: "Namsraijav",
         last_name: "Davaa",
         role: "Tech Consultant",
-        image: "/../public/namsrai.png",
+        image: require("../../../public/namsrai.png"),
     },
     {
         first_name: "Aruinbayar",
         last_name: "Duger",
         role: "Financial Analyst",
-        image: "/../public/ariukaa.png",
+        image: require("../../../public/ariukaa.png"),
     },
     {
         first_name: "Otgontsetseg",
         last_name: "Ganbold",
         role: "Analyst",
-        image: "/../public/otgo.png",
+        image: require("../../../public/otgo.png"),
     },
     {
         first_name: "Adiyabazar",
         last_name: "Ayushjav",
         role: "Consultant",
-        image: "/../public/Adiya.png",
+        image: require("../../../public/Adiya.png"),
     },
 ];
 
@@ -334,7 +356,7 @@ export default function HomePage() {
                 Collaborators
             </Typography>
             <Grid container pl={10} mt={10}>
-                {new Array(9).fill("").map((item, index) => (
+                {colabs.map((image, index) => (
                     <Grid xs={1.33} display="flex" key={index}>
                         <div
                             className="relative"
@@ -345,7 +367,7 @@ export default function HomePage() {
                                 layout={"fill"}
                                 objectFit={"contain"}
                                 quality={100}
-                                src={`/../public/colab${index + 1}.png`}
+                                src={image}
                             />
                         </div>
                     </Grid>
@@ -434,7 +456,7 @@ export default function HomePage() {
                         md={3}
                     >
                         <Image
-                            src="/../public/talent.png"
+                            src={require("../../../public/talent.png")}
                             alt="talent"
                             width={213}
                             height={784}

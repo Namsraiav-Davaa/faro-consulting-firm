@@ -76,7 +76,7 @@ export default function CareersPage() {
                                 >
                                     <Image
                                         objectFit="responsive"
-                                        src={"/../public/item1.png"}
+                                        src={require("../../../public/item1.png")}
                                         width={58}
                                         style={{ marginTop: "30px" }}
                                         height={58}
