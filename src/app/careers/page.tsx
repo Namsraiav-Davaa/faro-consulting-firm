@@ -39,8 +39,8 @@ export default function CareersPage() {
                 ml="22vw"
                 width="56vw"
             >
-                If you're looking for a challenging and rewarding career, we
-                encourage you to apply.
+                If you&apos;re looking for a challenging and rewarding career,
+                we encourage you to apply.
             </Typography>
             <div
                 style={{
