@@ -12,6 +12,8 @@ import Img5 from "../../../public/service5.png";
 import withUs from "../../../public/withUs.png";
 import { makeStyles } from "@mui/styles";
 import { Footer } from "../footer";
+import Nature from "../../../public/nature.png";
+
 // import { makeStyles } from "@mui/styles";
 const myFont = localFont({ src: "../../styles/fonts/SharpSansBold.otf" });
 const thinFont = localFont({ src: "../../styles/fonts/SharpSansLight.otf" });
@@ -232,7 +234,7 @@ export default function HomePage() {
                 </Grid>
                 <Grid xs={12} sm={12} md={7.2}>
                     <Image
-                        src={"/../public/nature.png"}
+                        src={Nature}
                         alt="nature"
                         width={imageWidth}
                         quality={100}
