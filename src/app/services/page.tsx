@@ -92,7 +92,13 @@ export default function SerVicesPage() {
                 to help our clients achieve their goals through strategic
                 planning and sound analysis.
             </Typography>
-            <Grid my={10} container>
+            <Grid
+                sx={{
+                    display: { xs: "none", md: "flex" },
+                }}
+                my={10}
+                container
+            >
                 {services.map((item, index) => (
                     <Grid mt={2} xs={12} container key={index}>
                         {index % 2 == 0 ? (
@@ -291,6 +297,92 @@ export default function SerVicesPage() {
                                 </Grid>
                             </Grid>
                         )}
+                    </Grid>
+                ))}
+            </Grid>
+            <Grid
+                sx={{
+                    flexGrow: 1,
+                    display: { xs: "flex", md: "none" },
+                }}
+                container
+            >
+                {services.map((item, index) => (
+                    <Grid xs={12} key={index}>
+                        <div
+                            style={{
+                                width: "100vw",
+                                height: "68vw",
+                                marginTop: 20,
+                                backgroundSize: "contain",
+                                backgroundRepeat: "no-repeat",
+                                backgroundImage: `url(${item.image.src})`,
+                            }}
+                        >
+                            <div
+                                style={{
+                                    width: "100vw",
+                                    height: "68vw",
+                                    marginLeft: "0px",
+                                    marginBottom: "0px",
+                                    display: "flex",
+                                    justifyContent: "flex-end",
+                                    alignItems: "flex-end",
+                                    borderRadius: "10vw",
+                                    background:
+                                        "linear-gradient(0deg,  rgba(79,207,0, 0.24), rgba(79,207,0, 0.01))",
+                                }}
+                            >
+                                <Typography
+                                    fontSize={30}
+                                    textAlign="end"
+                                    width="90%"
+                                    p={4}
+                                    fontFamily={myFont.style.fontFamily}
+                                    color={"white"}
+                                >
+                                    {item.text}
+                                </Typography>
+                            </div>
+                        </div>
+                        <div style={{ marginTop: "40px", marginLeft: "20px" }}>
+                            {item.infos.map((text, index) => (
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        flexDirection: "row",
+                                        marginTop: "10px",
+                                        marginBottom: "10px",
+                                    }}
+                                    key={index}
+                                >
+                                    <div style={{ flexGrow: 0 }}>
+                                        <Image
+                                            src={require("../../../public/Ellipse.png")}
+                                            width={26}
+                                            objectFit="contain"
+                                            style={{
+                                                marginRight: "15px",
+                                                flexGrow: 0,
+                                            }}
+                                            quality={100}
+                                            height={26}
+                                            alt="Picture of the author"
+                                        />
+                                    </div>
+                                    <Typography
+                                        mr={2}
+                                        width="80%"
+                                        fontFamily={thinFont.style.fontFamily}
+                                        key={index}
+                                        fontSize={20}
+                                        color="white"
+                                    >
+                                        {text}
+                                    </Typography>
+                                </div>
+                            ))}
+                        </div>
                     </Grid>
                 ))}
             </Grid>

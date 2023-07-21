@@ -1,13 +1,13 @@
 "use client";
 
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import React from "react";
 import localFont from "next/font/local";
 import Image from "next/image";
 import { Card, CardMedia } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 import Img from "../../public/needConsulting.png";
 import { Footer } from "../footer";
+import { makeStyles } from "@material-ui/core/styles";
 
 const myFont = localFont({ src: "../../styles/fonts/SharpSansBold.otf" });
 const mediumFont = localFont({ src: "../../styles/fonts/SharpSans.otf" });
@@ -25,30 +25,46 @@ const divStyle = {
     height: "400px", // Adjust the height as needed
 };
 
-const useStyles = makeStyles({
-    root: {
+const useStyles = makeStyles((theme: any) => ({
+    customJustifyMd: {
+        [theme.breakpoints.up("md")]: {
+            justifyContent: "flex-end", // Adjust as needed
+        },
+    },
+    customJustifyMd2: {
+        [theme.breakpoints.up("md")]: {
+            alignItems: "flex-start", // Adjust as needed
+        },
+    },
+    widthMd: {
+        [theme.breakpoints.up("md")]: {
+            width: "57%", // Adjust as needed
+        },
+    },
+}));
+
+const txtStyle = {
+    responsiveText: {
+        zIndex: 10,
         position: "relative",
-        height: 0,
-        paddingTop: "56.25%", // 16:9 aspect ratio (adjust as needed)
+        fontSize: "7rem",
+        "@media (max-width: 1500px)": {
+            fontSize: "6rem",
+        },
+        "@media (max-width: 1200px)": {
+            fontSize: "5rem",
+        },
+        "@media (max-width: 800px)": {
+            fontSize: "3rem",
+        },
+        "@media (max-width: 600px)": {
+            fontSize: "3rem",
+        },
+        "@media (max-width: 400px)": {
+            fontSize: "2rem",
+        },
     },
-    media: {
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-    },
-    overlay: {
-        position: "absolute",
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%, -50%)",
-        textAlign: "center",
-        color: "white",
-    },
-});
+};
 
 const datas = [
     {
@@ -74,6 +90,8 @@ const datas = [
 ];
 
 export default function AboutPage() {
+    const classes = useStyles();
+
     return (
         <div style={{ minHeight: "100vh" }}>
             <Box
@@ -81,7 +99,7 @@ export default function AboutPage() {
                 display="flex"
                 justifyContent="center"
                 alignItems="center"
-                pt="5vw"
+                pt="10vh"
                 flexDirection="column"
                 sx={{ alignItems: "center" }}
             >
@@ -105,20 +123,24 @@ export default function AboutPage() {
                 <Typography
                     fontFamily={mediumFont.style.fontFamily}
                     fontSize={24}
-                    width={"45%"}
+                    width={"90%"}
                     textAlign={"center"}
                     color={"#ffffff"}
+                    className={classes.widthMd}
                 >
                     We bring an entrepreneurial mindset to your toughest
                     challenges, building businesses that redefine indsutries.
                 </Typography>
-                <Box display="flex" flexDirection="row" width="100%">
-                    <Box
-                        width="50%"
-                        height="25vw"
+                <Grid container display="flex" flexDirection="row" width="100%">
+                    <Grid
+                        sm={12}
+                        xs={12}
+                        md={6}
                         display="flex"
                         alignItems="center"
-                        justifyContent="flex-end"
+                        justifyContent="center"
+                        my={4}
+                        className={classes.customJustifyMd}
                     >
                         <Image
                             src={require("../../../public/image1.png")}
@@ -127,22 +149,26 @@ export default function AboutPage() {
                             height={500}
                             alt="Picture of the author"
                         />
-                    </Box>
-                    <Box
-                        width="50%"
-                        height="25vw"
+                    </Grid>
+                    <Grid
+                        xs={12}
+                        sm={12}
+                        md={6}
                         display="flex"
                         flexDirection="column"
                         pl={"5%"}
-                        alignItems="flex-start"
+                        my={4}
+                        className={classes.customJustifyMd2}
+                        alignItems="center"
                         justifyContent="center"
                     >
                         <Typography
                             fontFamily={thinFont.style.fontFamily}
-                            width="57%"
+                            width="90%"
                             fontWeight="10"
                             color="#ffffff"
                             align="justify"
+                            className={classes.widthMd}
                             fontSize={18}
                         >
                             Our firm is designed to operate as a single global
@@ -167,8 +193,8 @@ export default function AboutPage() {
                         >
                             Get in touch
                         </Button>
-                    </Box>
-                </Box>
+                    </Grid>
+                </Grid>
                 <Box display="flex" flexDirection="row">
                     <Typography
                         fontSize={66}
@@ -189,15 +215,25 @@ export default function AboutPage() {
                 <Typography
                     fontFamily={mediumFont.style.fontFamily}
                     fontSize={24}
-                    width={"45%"}
+                    width={"90%"}
+                    className={classes.widthMd}
                     textAlign={"center"}
                     color={"#ffffff"}
                 >
                     We help businesses create a more sustainable and inclusive
                     future.
                 </Typography>
-                <Box display="flex" mt="5vw" flexDirection="row" width="100%">
-                    <Box
+                <Grid
+                    container
+                    display="flex"
+                    mt="5vw"
+                    flexDirection="row"
+                    width="100%"
+                >
+                    <Grid
+                        sm={12}
+                        xs={12}
+                        md={6}
                         display="flex"
                         pl="10%"
                         alignItems="flex-start"
@@ -248,8 +284,8 @@ export default function AboutPage() {
                             height={800}
                             alt="Picture of the author"
                         />
-                    </Box>
-                    <Box pt="80px" width="50%">
+                    </Grid>
+                    <Grid sm={12} xs={12} md={6} pt="80px">
                         {datas.map((item, index) => (
                             <Box
                                 display="flex"
@@ -292,8 +328,8 @@ export default function AboutPage() {
                                 </Box>
                             </Box>
                         ))}
-                    </Box>
-                </Box>
+                    </Grid>
+                </Grid>
             </Box>
             <div className="relative">
                 <Image
@@ -312,29 +348,29 @@ export default function AboutPage() {
                     <Box display="flex">
                         <Typography
                             fontFamily={myFont.style.fontFamily}
-                            fontSize={100}
+                            // fontSize={100}
                             display="flex"
-                            sx={{ zIndex: 10, position: "relative" }}
                             color="#FFFFFF"
+                            sx={txtStyle.responsiveText}
                         >
                             Need
                         </Typography>
                         <Typography
                             fontFamily={myFont.style.fontFamily}
-                            fontSize={100}
+                            // fontSize={100}
                             ml={3}
                             display="flex"
-                            sx={{ zIndex: 10, position: "relative" }}
                             color="#4FCF00"
+                            sx={txtStyle.responsiveText}
                         >
                             consult
                         </Typography>
                         <Typography
                             fontFamily={myFont.style.fontFamily}
-                            fontSize={100}
+                            // fontSize={100}
                             display="flex"
-                            sx={{ zIndex: 10, position: "relative" }}
                             color="#FFFFFF"
+                            sx={txtStyle.responsiveText}
                         >
                             ing
                         </Typography>

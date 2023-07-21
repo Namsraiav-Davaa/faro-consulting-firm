@@ -1,19 +1,16 @@
 "use client";
 
 import React from "react";
+import { usePathname } from "next/navigation";
 import {
     AppBar,
-    Avatar,
     Box,
     Button,
     Container,
-    Icon,
     IconButton,
     Menu,
     MenuItem,
-    SvgIcon,
     Toolbar,
-    Tooltip,
     Typography,
 } from "@mui/material";
 import AdbIcon from "@mui/icons-material/Adb";
@@ -43,6 +40,10 @@ export function ResponsiveAppBar() {
         setAnchorElUser(event.currentTarget);
     };
 
+    const pathname = usePathname();
+
+    console.log("pathname :>> ", pathname);
+
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
@@ -68,7 +69,7 @@ export function ResponsiveAppBar() {
                             display: { xs: "none", md: "flex" },
                         }}
                     >
-                        <Link href={"/about"}>
+                        <Link href={"/"}>
                             <Image
                                 src={Logo}
                                 alt="123"
@@ -150,10 +151,16 @@ export function ResponsiveAppBar() {
                                     sx={{
                                         my: 4,
                                         mx: 2,
+                                        py: 0,
                                         color: "white",
                                         textTransform: "capitalize",
                                         display: "block",
                                         fontWeight: 100,
+                                        borderRadius: 0,
+                                        borderBottom:
+                                            `/${page}` == pathname
+                                                ? "1.5px solid #4FCF00"
+                                                : "",
                                         fontSize: 16,
                                         fontFamily: myFont.style.fontFamily,
                                     }}
@@ -164,46 +171,7 @@ export function ResponsiveAppBar() {
                         ))}
                     </Box>
 
-                    <Box sx={{ flexGrow: 0 }}>
-                        <Tooltip title="Open settings">
-                            <IconButton
-                                onClick={handleOpenUserMenu}
-                                sx={{ p: 0 }}
-                            >
-                                <Avatar
-                                    alt="Remy Sharp"
-                                    src="/static/images/avatar/2.jpg"
-                                />
-                            </IconButton>
-                        </Tooltip>
-                        <Menu
-                            sx={{ mt: "45px" }}
-                            id="menu-appbar"
-                            anchorEl={anchorElUser}
-                            anchorOrigin={{
-                                vertical: "top",
-                                horizontal: "right",
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: "top",
-                                horizontal: "right",
-                            }}
-                            open={Boolean(anchorElUser)}
-                            onClose={handleCloseUserMenu}
-                        >
-                            {settings.map((setting) => (
-                                <MenuItem
-                                    key={setting}
-                                    onClick={handleCloseUserMenu}
-                                >
-                                    <Typography textAlign="center">
-                                        {setting}
-                                    </Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu>
-                    </Box>
+                    <Box sx={{ flexGrow: 0 }}>{/*  */}</Box>
                 </Toolbar>
             </Container>
         </AppBar>

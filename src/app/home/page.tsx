@@ -51,21 +51,21 @@ const services = [
 
 const styles = {
     responsiveText: {
-        fontSize: "9.5rem",
+        fontSize: "7rem",
         "@media (max-width: 1500px)": {
-            fontSize: "7rem",
+            fontSize: "6rem",
         },
         "@media (max-width: 1200px)": {
             fontSize: "5rem",
         },
         "@media (max-width: 800px)": {
-            fontSize: "4rem",
+            fontSize: "3rem",
         },
         "@media (max-width: 600px)": {
-            fontSize: "2.5rem",
+            fontSize: "3rem",
         },
         "@media (max-width: 400px)": {
-            fontSize: "2rem",
+            fontSize: "4rem",
         },
     },
     responsiveText2: {
@@ -189,14 +189,19 @@ export default function HomePage() {
                 <Grid xs={12} sm={12} md={4.8}>
                     <Box
                         sx={{
-                            zIndex: 10,
-                            position: "relative",
+                            justifyContent: "flex-end",
+                            flexGrow: 1,
+                            height: "100%",
                             display: "flex",
                             flexDirection: "column",
-                            justifyContent: "flex-end",
+                            zIndex: 10,
+                            // position: "relative",
+                            // display: "flex",
+                            // flexDirection: "column",
                             alignItems: "flex-start",
-                            height: imageWidth * 0.921,
+                            // height: imageWidth * 0.921,
                         }}
+                        pt="10vh"
                         pl="8vw"
                     >
                         <Typography
@@ -248,6 +253,7 @@ export default function HomePage() {
                                 textTransform: "lowercase",
                                 px: "30px",
                                 mt: "30px",
+                                mb: "10px",
                             }}
                         >
                             learn more
