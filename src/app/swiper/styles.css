@@ -1,0 +1,54 @@
+#app {
+    height: 100%;
+  }
+  html,
+  body {
+    position: relative;
+    height: 100%;
+    background-image: url('../../../public/vector-bg.svg');
+    background-color: #080712; 
+    background-repeat: repeat-y;
+    background-size: 75vh;
+    background-position: top -5vh right -30vh;
+  }
+  
+  body {
+    background: transparent;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+  
+.swiperSlide {
+  background: transparent;
+}
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    overflow: hidden;
+    background: transparent;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo-container {
+    padding-left: 5vw;
+    margin-top: 5vw;
+    box-sizing: border-box;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  

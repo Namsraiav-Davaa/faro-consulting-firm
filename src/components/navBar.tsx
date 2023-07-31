@@ -62,8 +62,12 @@ export function ResponsiveAppBar() {
             }}
             // position="static"
         >
-            <Container sx={{ flexGrow: 1, maxWidth: "100vw" }} maxWidth={false}>
-                <Toolbar>
+            <Container
+                sx={{ flexGrow: 1, maxWidth: "100vw" }}
+                disableGutters={true}
+                maxWidth={false}
+            >
+                <Toolbar disableGutters={true}>
                     <Box
                         sx={{
                             display: { xs: "none", md: "flex" },
