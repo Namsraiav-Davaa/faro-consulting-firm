@@ -1,3 +1,7 @@
+
+* {
+  box-sizing: border-boxs;
+}
 #app {
     height: 100%;
   }
@@ -43,8 +47,39 @@
   }
 
   @keyframes slide {
-      /*  */
+      from {
+        transform: translateX(0);
+      }
+       to {
+        transform: translateX(-100%);
+       }
   }
+
+
+  .bg {
+    background-color: white;
+    height: 100vh;
+    background-image: url('../../../public/vector-bg.svg');
+    background-repeat: repeat-y;
+    background-size: 75vh;
+    background-position: top -5vh right -30vh;
+  }
+
+  .logos {
+    overflow: hidden;
+    padding: 60px 0;
+    box-sizing: border-box;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .logo-slide {
+    animation: 15s slide infinite linear;
+    flex-direction: row;
+    display: flex;
+  }
+
 
   .logo-container {
     padding-left: 5vw;
@@ -53,6 +88,14 @@
     white-space: nowrap;
     display: flex;
     flex-direction: row;
+  }
+
+  .nature-image {
+    /* margin-left: 50px; */
+    /* width: 100%; */
+    border-bottom-left-radius: 5%;
+    height: 100%;
+    object-fit:cover;
   }
   
   

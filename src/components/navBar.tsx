@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useContext } from "react";
 import { usePathname } from "next/navigation";
 import {
     AppBar,
@@ -16,11 +16,13 @@ import {
 import AdbIcon from "@mui/icons-material/Adb";
 import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "../../public/logo.svg";
+import LogoB from "../../public/logoB.svg";
 import { makeStyles } from "@mui/styles";
 import Image from "next/image";
 import localFont from "next/font/local";
 import { pages } from "component/app/contants";
 import Link from "next/link";
+import { ColorContext } from "component/contexts/textColor";
 
 const myFont = localFont({ src: "../styles/fonts/SharpSansLight.otf" });
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -29,6 +31,9 @@ export function ResponsiveAppBar() {
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
         null
     );
+
+    const { color } = useContext(ColorContext);
+
     const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
         null
     );
@@ -75,7 +80,7 @@ export function ResponsiveAppBar() {
                     >
                         <Link href={"/"}>
                             <Image
-                                src={Logo}
+                                src={color == "white" ? Logo : LogoB}
                                 alt="123"
                                 style={{ marginLeft: "5vw" }}
                             />
@@ -156,7 +161,7 @@ export function ResponsiveAppBar() {
                                         my: 4,
                                         mx: 2,
                                         py: 0,
-                                        color: "white",
+                                        color: color,
                                         textTransform: "capitalize",
                                         display: "block",
                                         fontWeight: 100,

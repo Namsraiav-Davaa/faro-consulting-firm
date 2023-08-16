@@ -2,7 +2,7 @@
 
 import { Box, Button, Grid, TextField, Typography } from "@mui/material";
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import localFont from "next/font/local";
 import Img1 from "../../../public/service1.png";
 import Img2 from "../../../public/service2.png";
@@ -12,7 +12,7 @@ import Img5 from "../../../public/service5.png";
 import withUs from "../../../public/withUs.png";
 import { makeStyles } from "@mui/styles";
 import { Footer } from "../footer";
-import Nature from "../../../public/nature.png";
+import Mountain from "../../../public/nature.png";
 
 import "./styles.css";
 
@@ -37,6 +37,8 @@ import colab6 from "../../../public/colab6.png";
 import colab7 from "../../../public/colab7.png";
 import colab8 from "../../../public/colab8.png";
 import colab9 from "../../../public/colab9.png";
+import { Page3 } from "./page3";
+import { ColorContext } from "component/contexts/textColor";
 
 const colabs = [
     colab1,
@@ -150,6 +152,7 @@ const team = [
 
 export default function HomePage() {
     const [screenHeight, setscreenHeight] = useState(0);
+    const { setColor } = useContext(ColorContext);
     console.log("screenHeight :>> ", screenHeight);
     useEffect(() => {
         const handleResize = () => {
@@ -189,9 +192,15 @@ export default function HomePage() {
         },
     }));
 
-    const classes = useStyles();
-
     const imageHeight = screenHeight;
+
+    const onSlideChange = (e: any) => {
+        if (e.activeIndex == 2 || e.activeIndex == 3) {
+            setColor("black");
+        } else {
+            setColor("white");
+        }
+    };
 
     return (
         <>
@@ -207,6 +216,7 @@ export default function HomePage() {
                 scrollbar={{ draggable: true }}
                 modules={[Mousewheel, Pagination]}
                 className="mySwiper"
+                onSlideChange={onSlideChange}
                 touchEventsTarget="container"
                 touchReleaseOnEdges={true}
             >
@@ -287,18 +297,21 @@ export default function HomePage() {
                             sx={{
                                 display: "flex",
                                 flexDirection: "column",
-                                justifyContent: "flex-end",
+                                // justifyContent: "flex-end",
+                                overflow: "visible",
                                 alignItems: "flex-end",
                             }}
                             sm={12}
                             md={7.2}
                         >
                             <Image
-                                src={Nature}
+                                className="nature-image"
+                                // style={{ objectFit: "cover" }}
+                                src={Mountain}
                                 alt="nature"
-                                width={imageHeight * 1.084}
+                                // width={4800}
+                                // height={1800}
                                 quality={100}
-                                height={imageHeight}
                             />
                         </Grid>
                     </Grid>
@@ -401,26 +414,47 @@ export default function HomePage() {
                         >
                             Collaborators
                         </Typography>
-                        <div className="logo-container">
-                            {colabs.map((image, index) => (
-                                <div
-                                    key={index}
-                                    className="relative"
-                                    style={{ width: 230, height: 40 }}
-                                >
-                                    <Image
-                                        alt="colab"
-                                        layout={"fill"}
-                                        objectFit={"contain"}
-                                        quality={100}
-                                        src={image}
-                                    />
-                                </div>
-                            ))}
+                        <div className="logos">
+                            <div className="logo-slide">
+                                {colabs.map((image, index) => (
+                                    <div
+                                        key={index}
+                                        className="relative"
+                                        style={{ width: 230, height: 40 }}
+                                    >
+                                        <Image
+                                            alt="colab"
+                                            layout={"fill"}
+                                            objectFit={"contain"}
+                                            quality={100}
+                                            src={image}
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="logo-slide">
+                                {colabs.map((image, index) => (
+                                    <div
+                                        key={index}
+                                        className="relative"
+                                        style={{ width: 230, height: 40 }}
+                                    >
+                                        <Image
+                                            alt="colab"
+                                            layout={"fill"}
+                                            objectFit={"contain"}
+                                            quality={100}
+                                            src={image}
+                                        />
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </Box>
                 </SwiperSlide>
-                <SwiperSlide>Slide 6</SwiperSlide>
+                <SwiperSlide>
+                    <Page3 />
+                </SwiperSlide>
                 <SwiperSlide>Slide 7</SwiperSlide>
                 <SwiperSlide>Slide 8</SwiperSlide>
                 <SwiperSlide>Slide 9</SwiperSlide>
