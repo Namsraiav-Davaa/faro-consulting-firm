@@ -59,10 +59,18 @@ const team = [
 
 export function Page3() {
     return (
-        <div className="bg">
+        <div
+            style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+            }}
+            className="bg"
+        >
             <Typography
-                pl="8vw"
-                pt={10}
+                textAlign="start"
+                pl="5vw"
+                pt={20}
                 fontFamily={Font.style.fontFamily}
                 fontSize={28}
                 color="#4FCF00"
@@ -73,26 +81,21 @@ export function Page3() {
                 <Grid container xs={12} sm={12} md={9}>
                     {team.map((item) => (
                         <Grid
+                            display="flex"
                             xs={8}
                             sm={4}
                             md={3.3}
                             lg={2.5}
                             my={10}
                             xl={2.5}
-                            mt={5}
+                            mt={2}
                             key={item.first_name}
                         >
                             <div
                                 style={{
-                                    // width: 217,
-                                    // height: 223,
                                     display: "flex",
                                     alignItems: "center",
                                     flexDirection: "column",
-                                    // backgroundRepeat: "no-repeat",
-                                    // backgroundPosition: "center",
-                                    // backgroundImage: `url(${border.src})`,
-                                    // backgroundColor: "skyblue",
                                 }}
                             >
                                 <Image
@@ -129,7 +132,6 @@ export function Page3() {
                 </Grid>
                 <Grid
                     sx={{
-                        // backgroundColor: "skyblue",
                         display: "flex",
                         flex: 1,
                         flexGrow: 1,

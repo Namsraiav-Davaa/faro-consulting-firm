@@ -19,7 +19,18 @@ const thinFont = localFont({ src: "../styles/fonts/SharpSansLight.otf" });
 export function Footer() {
     return (
         <Grid p={0} container bgcolor="black" spacing={0}>
-            <Grid p={12} item sm={6} xs={12} md={4} lg={2.8}>
+            <Grid
+                px={12}
+                py={6}
+                item
+                sm={6}
+                display="flex"
+                alignItems="flex-start"
+                flexDirection="column"
+                xs={12}
+                md={4}
+                lg={2.8}
+            >
                 {pages.map((page) => (
                     <Link key={page} href={`/${page}`}>
                         <Typography
@@ -33,7 +44,18 @@ export function Footer() {
                     </Link>
                 ))}
             </Grid>
-            <Grid p={12} item sm={6} xs={12} md={4} lg={2.8}>
+            <Grid
+                display="flex"
+                flexDirection="column"
+                alignItems="flex-start"
+                px={12}
+                py={6}
+                item
+                sm={6}
+                xs={12}
+                md={4}
+                lg={2.8}
+            >
                 <Typography
                     fontSize={15}
                     lineHeight={2}
@@ -46,13 +68,25 @@ export function Footer() {
                     mt={2}
                     fontFamily={thinFont.style.fontFamily}
                     fontSize={15}
+                    textAlign="start"
                     color="white"
                 >
                     702, Galaxy Tower Office, 15th khoroo, Khan-Uul District,
                     Ulaanbaatar, Mongolia, 17011
                 </Typography>
             </Grid>
-            <Grid p={12} item sm={6} xs={12} md={4} lg={2.8}>
+            <Grid
+                display="flex"
+                flexDirection="column"
+                alignItems="flex-start"
+                px={12}
+                py={6}
+                item
+                sm={6}
+                xs={12}
+                md={4}
+                lg={2.8}
+            >
                 <Typography
                     fontSize={15}
                     lineHeight={2}
@@ -63,6 +97,7 @@ export function Footer() {
                 </Typography>
                 <Typography
                     mt={2}
+                    textAlign="start"
                     fontFamily={thinFont.style.fontFamily}
                     fontSize={15}
                     color="white"
@@ -70,7 +105,7 @@ export function Footer() {
                     (976) 7000-7222 consulting@farogroup.org
                 </Typography>
             </Grid>
-            <Grid p={12} item sm={6} xs={12} md={4} lg={3.5}>
+            <Grid px={12} py={6} item sm={6} xs={12} md={4} lg={3.5}>
                 <Typography
                     fontSize={15}
                     lineHeight={2}
@@ -84,7 +119,19 @@ export function Footer() {
                     <YouTubeIcon sx={{ ml: 2, color: "#4FCF00" }} />
                 </Typography>
             </Grid>
-            <Grid pl={12} pb={4} item sm={6} xs={12} md={4} lg={3.5}>
+            <Grid
+                display="flex"
+                flexDirection="column"
+                alignItems="flex-start"
+                pb={4}
+                item
+                pl={12}
+                py={6}
+                sm={6}
+                xs={12}
+                md={4}
+                lg={3.5}
+            >
                 <Typography
                     mt={2}
                     fontFamily={thinFont.style.fontFamily}
