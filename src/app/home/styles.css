@@ -98,4 +98,75 @@
     object-fit:cover;
   }
   
+  .talent-1 {
+    width: 7vw;
+    align-self: flex-start;
+    object-fit: contain;
+    height: auto;
+  }
+
+  .talent-1.animate {
+    animation-duration: 2s;
+    animation-name: slidein;
+  }
+
+  .talent-1.back {
+    animation-duration: 2s;
+    animation-name: slideout;
+  }
+
+  @keyframes slidein {
+    from {
+      margin-top: 100%;
+    }
+    to {
+      margin-top: 0%;
+    }
+  }
+
+  @keyframes slideout {
+    from {
+      margin-top: 0%;
+    }
+    to {
+      margin-top: 100%;
+    }
+  }
+
   
+
+  .talent-2 {
+    align-self: flex-start;
+    width: 4vw;
+    object-fit: contain;
+    height: auto;
+    margin-left: 2vw;
+  }
+
+  .talent-2.animate {
+    animation-duration: 2s;
+    animation-name: slidein2;
+  }
+
+  .talent-2.back {
+    animation-duration: 2s;
+    animation-name: slideout2;
+  }
+
+  @keyframes slidein2 {
+    from {
+      margin-left: 100%;
+    }
+    to {
+      margin-left: 2vw;
+    }
+  }
+
+  @keyframes slideout2 {
+    from {
+      margin-left: 2vw;
+    }
+    to {
+      margin-left: 100%;
+    }
+  }

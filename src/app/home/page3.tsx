@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import Image from "next/image";
 import "./styles.css";
 import { AnimatedText } from "component/components/animatedText";
+import { useEffect, useState } from "react";
 const Font = localFont({ src: "../../styles/fonts/SharpSansSemibold.otf" });
 const myFont = localFont({ src: "../../styles/fonts/SharpSansBold.otf" });
 const thinFont = localFont({ src: "../../styles/fonts/SharpSansLight.otf" });
@@ -59,6 +60,14 @@ const team = [
 ];
 
 export function Page3({ isActive }: { isActive: boolean }) {
+    const [shouldAnimate, setShouldAnimate] = useState(false);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setShouldAnimate(isActive === undefined ? true : isActive); // Trigger animation after the component is mounted
+        }, 500);
+    }, [isActive]);
+
     return (
         <div
             style={{
@@ -137,18 +146,26 @@ export function Page3({ isActive }: { isActive: boolean }) {
                 <Grid
                     sx={{
                         display: "flex",
-                        flex: 1,
-                        flexGrow: 1,
+                        flexDirection: "row",
                     }}
                     xs={12}
                     sm={12}
                     md={3}
                 >
                     <Image
-                        src={require("../../../public/talent.png")}
+                        src={require("../../../public/talent1.png")}
                         alt="talent"
-                        width={213}
-                        height={784}
+                        className={`${"talent-1"} ${
+                            shouldAnimate ? "animate" : "back"
+                        } talent-1`}
+                        // className="talent-1"
+                    />
+                    <Image
+                        src={require("../../../public/talent2.png")}
+                        className={`${"talent-2"} ${
+                            shouldAnimate ? "animate" : "back"
+                        } talent-2`}
+                        alt="talent"
                     />
                 </Grid>
             </Grid>

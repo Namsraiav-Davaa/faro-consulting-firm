@@ -1,7 +1,12 @@
 "use client";
 import { createContext, useState } from "react";
 
-export const ColorContext = createContext(null);
+type objectType = {
+    color: string;
+    setColor: (e: string) => void;
+};
+
+export const ColorContext = createContext<objectType>({} as objectType);
 
 export function ColorContextProvider({ children }: { children: any }) {
     const [color, setColor] = useState("white");

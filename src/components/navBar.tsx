@@ -49,6 +49,8 @@ export function ResponsiveAppBar() {
 
     console.log("pathname :>> ", pathname);
 
+    const _color = pathname !== "/home" ? "white" : color;
+
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
@@ -80,7 +82,7 @@ export function ResponsiveAppBar() {
                     >
                         <Link href={"/"}>
                             <Image
-                                src={color == "white" ? Logo : LogoB}
+                                src={_color == "white" ? Logo : LogoB}
                                 alt="123"
                                 style={{ marginLeft: "5vw" }}
                             />
@@ -161,7 +163,7 @@ export function ResponsiveAppBar() {
                                         my: 4,
                                         mx: 2,
                                         py: 0,
-                                        color: color,
+                                        color: _color,
                                         textTransform: "capitalize",
                                         display: "block",
                                         fontWeight: 100,

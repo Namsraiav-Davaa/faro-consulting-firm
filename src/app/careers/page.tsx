@@ -6,6 +6,7 @@ import localFont from "next/font/local";
 import career from "../../../public/careerbg.png";
 import Image from "next/image";
 import { Footer } from "../footer";
+import { AnimatedText } from "component/components/animatedText";
 
 const myFont = localFont({ src: "../../styles/fonts/SharpSansBold.otf" });
 const thinFont = localFont({ src: "../../styles/fonts/SharpSansLight.otf" });
@@ -22,15 +23,15 @@ const reasons = [
 export default function CareersPage() {
     return (
         <Box pt={30}>
-            <Typography
+            <AnimatedText
                 fontSize={66}
                 color={"#ffffff"}
                 fontFamily={myFont.style.fontFamily}
                 textAlign="center"
             >
                 Careers
-            </Typography>
-            <Typography
+            </AnimatedText>
+            <AnimatedText
                 fontSize={24}
                 fontFamily={thinFont.style.fontFamily}
                 textAlign="center"
@@ -41,7 +42,7 @@ export default function CareersPage() {
             >
                 If you&apos;re looking for a challenging and rewarding career,
                 we encourage you to apply.
-            </Typography>
+            </AnimatedText>
             <div
                 style={{
                     marginTop: "5vh",
@@ -55,7 +56,7 @@ export default function CareersPage() {
                 }}
             />
 
-            <Typography
+            <AnimatedText
                 fontSize={48}
                 color={"#ffffff"}
                 fontFamily={myFont.style.fontFamily}
@@ -63,7 +64,7 @@ export default function CareersPage() {
                 mt={4}
             >
                 Why <span style={{ color: "#4FCF00" }}>work</span> with us?
-            </Typography>
+            </AnimatedText>
             <Grid mt={10} justifyContent="center" container>
                 <Grid container justifyContent="center" xs={8}>
                     {reasons.map((item, index) => (
@@ -84,7 +85,7 @@ export default function CareersPage() {
                                         alt="Picture of the author"
                                     />
                                 </div>
-                                <Typography
+                                <AnimatedText
                                     m={3}
                                     fontFamily={semiBold.style.fontFamily}
                                     fontSize={22}
@@ -92,20 +93,20 @@ export default function CareersPage() {
                                     width="80%"
                                 >
                                     {item}
-                                </Typography>
+                                </AnimatedText>
                             </Box>
                         </Grid>
                     ))}
                 </Grid>
             </Grid>
-            <Typography
+            <AnimatedText
                 m={8}
                 fontFamily={semiBold.style.fontFamily}
                 textAlign="center"
                 color="#4FCF00"
             >
                 Open positions
-            </Typography>
+            </AnimatedText>
             <Footer />
         </Box>
     );
