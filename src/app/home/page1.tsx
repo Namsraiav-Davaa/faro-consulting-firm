@@ -2,6 +2,7 @@ import { Box, Button, Grid, Typography } from "@mui/material";
 import localFont from "next/font/local";
 import Image from "next/image";
 import Mountain from "../../../public/nature.png";
+import { AnimatedText } from "component/components/animatedText";
 
 const myFont = localFont({ src: "../../styles/fonts/SharpSansBold.otf" });
 const thinFont = localFont({ src: "../../styles/fonts/SharpSansLight.otf" });
@@ -45,7 +46,7 @@ const styles = {
     },
 };
 
-export function Page1() {
+export function Page1({ isActive }: { isActive: boolean }) {
     return (
         <Grid sx={{ padding: 0, height: "100%" }} container>
             <Grid
@@ -60,32 +61,35 @@ export function Page1() {
                 sm={12}
                 md={4.8}
             >
-                <Typography
+                <AnimatedText
                     lineHeight={0.9}
                     mt={10}
                     sx={styles.responsiveText}
                     fontFamily={myFont.style.fontFamily}
                     color="#4FCF00"
+                    isActive={isActive}
                 >
                     Gateway
-                </Typography>
-                <Typography
+                </AnimatedText>
+                <AnimatedText
                     lineHeight={0.9}
                     sx={styles.responsiveText}
                     fontFamily={myFont.style.fontFamily}
                     color="white"
+                    isActive={isActive}
                 >
                     to the
-                </Typography>
-                <Typography
+                </AnimatedText>
+                <AnimatedText
                     lineHeight={0.9}
                     sx={styles.responsiveText}
                     fontFamily={myFont.style.fontFamily}
                     color="white"
+                    isActive={isActive}
                 >
                     steppe.
-                </Typography>
-                <Typography
+                </AnimatedText>
+                <AnimatedText
                     fontFamily={thinFont.style.fontFamily}
                     width="80%"
                     fontWeight="10"
@@ -93,11 +97,12 @@ export function Page1() {
                     align="justify"
                     mt={5}
                     fontSize={24}
+                    isActive={isActive}
                 >
                     By identifying strengths and defining existing weakness, we{" "}
                     <span style={{ color: "#4FCF00" }}>empower</span> your
                     organization.
-                </Typography>
+                </AnimatedText>
                 <Button
                     variant="outlined"
                     sx={{

@@ -1,0 +1,15 @@
+.text-animation {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 3s ease, transform 3s ease;
+  }
+
+  .text-animation.back {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  .text-animation.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }

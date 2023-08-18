@@ -2,6 +2,7 @@ import { Grid, Typography } from "@mui/material";
 import localFont from "next/font/local";
 import Image from "next/image";
 import "./styles.css";
+import { AnimatedText } from "component/components/animatedText";
 const Font = localFont({ src: "../../styles/fonts/SharpSansSemibold.otf" });
 const myFont = localFont({ src: "../../styles/fonts/SharpSansBold.otf" });
 const thinFont = localFont({ src: "../../styles/fonts/SharpSansLight.otf" });
@@ -57,7 +58,7 @@ const team = [
     },
 ];
 
-export function Page3() {
+export function Page3({ isActive }: { isActive: boolean }) {
     return (
         <div
             style={{
@@ -67,16 +68,17 @@ export function Page3() {
             }}
             className="bg"
         >
-            <Typography
+            <AnimatedText
                 textAlign="start"
                 pl="5vw"
                 pt={20}
                 fontFamily={Font.style.fontFamily}
                 fontSize={28}
                 color="#4FCF00"
+                isActive={isActive}
             >
                 Team
-            </Typography>
+            </AnimatedText>
             <Grid pl="5vw" container>
                 <Grid container xs={12} sm={12} md={9}>
                     {team.map((item) => (
@@ -105,9 +107,10 @@ export function Page3() {
                                     quality={100}
                                     alt="aa"
                                 />
-                                <Typography
+                                <AnimatedText
                                     fontFamily={myFont.style.fontFamily}
                                     fontSize={16}
+                                    isActive={isActive}
                                     color="#000000"
                                 >
                                     {item.first_name}{" "}
@@ -119,13 +122,14 @@ export function Page3() {
                                     >
                                         {item.last_name}
                                     </span>
-                                </Typography>
-                                <Typography
+                                </AnimatedText>
+                                <AnimatedText
+                                    isActive={isActive}
                                     fontFamily={myFont.style.fontFamily}
                                     color="#504F4F"
                                 >
                                     {item.role}
-                                </Typography>
+                                </AnimatedText>
                             </div>
                         </Grid>
                     ))}

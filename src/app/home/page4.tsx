@@ -1,6 +1,7 @@
 import { Typography } from "@mui/material";
 import withUs from "../../../public/withUs.png";
 import localFont from "next/font/local";
+import { AnimatedText } from "component/components/animatedText";
 
 const myFont = localFont({ src: "../../styles/fonts/SharpSansBold.otf" });
 
@@ -44,7 +45,7 @@ const styles = {
     },
 };
 
-export function Page4() {
+export function Page4({ isActive }: { isActive: boolean }) {
     return (
         <div
             style={{
@@ -62,23 +63,25 @@ export function Page4() {
                 backgroundImage: `url(${withUs.src})`,
             }}
         >
-            <Typography
+            <AnimatedText
                 sx={styles.responsiveText2}
                 fontFamily={myFont.style.fontFamily}
                 color="white"
                 lineHeight={1}
+                isActive={isActive}
             >
                 Enable your <br />
                 <span style={{ color: "#4FCF00" }}>success</span> <br />
                 with us!
-            </Typography>
-            <Typography
+            </AnimatedText>
+            <AnimatedText
                 fontSize={20}
+                isActive={isActive}
                 fontFamily={myFont.style.fontFamily}
                 color="white"
             >
                 Need consulting? Reach out to us.
-            </Typography>
+            </AnimatedText>
         </div>
     );
 }

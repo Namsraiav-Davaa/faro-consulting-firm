@@ -43,19 +43,19 @@ export default function HomePage() {
                 touchReleaseOnEdges={true}
             >
                 <SwiperSlide>
-                    <Page1 />
+                    {({ isActive }) => <Page1 isActive={isActive} />}
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Page2 />
+                    {({ isActive }) => <Page2 isActive={isActive} />}
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Page3 />
+                    {({ isActive }) => <Page3 isActive={isActive} />}
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Page4 />
+                    {({ isActive }) => <Page4 isActive={isActive} />}
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Page5 />
+                    {({ isActive }) => <Page5 isActive={isActive} />}
                 </SwiperSlide>
             </Swiper>
         </>

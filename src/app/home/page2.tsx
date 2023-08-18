@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid } from "@mui/material";
 import Image from "next/image";
 import colab1 from "../../../public/colab1.png";
 import colab2 from "../../../public/colab2.png";
@@ -15,6 +15,7 @@ import Img3 from "../../../public/service3.png";
 import Img4 from "../../../public/service4.png";
 import Img5 from "../../../public/service5.png";
 import localFont from "next/font/local";
+import { AnimatedText } from "component/components/animatedText";
 
 const thinFont = localFont({ src: "../../styles/fonts/SharpSansLight.otf" });
 const Font = localFont({ src: "../../styles/fonts/SharpSansSemibold.otf" });
@@ -40,7 +41,10 @@ const services = [
     { text: "Government Relations", image: Img5 },
 ];
 
-export function Page2() {
+export function Page2({ isActive }: { isActive: boolean }) {
+
+    console.log("isActive :>> ", isActive);
+
     return (
         <Box
             sx={{
@@ -50,15 +54,16 @@ export function Page2() {
                 alignItems: "flex-start",
             }}
         >
-            <Typography
+            <AnimatedText
                 pl="5vw"
                 pt={15}
                 fontFamily={Font.style.fontFamily}
                 fontSize={28}
                 color="#4FCF00"
+                isActive={isActive}
             >
                 Services
-            </Typography>
+            </AnimatedText>
             <Grid pt={5} container>
                 {services.map((item, index) => (
                     <Grid
@@ -97,16 +102,17 @@ export function Page2() {
                                         "linear-gradient(0deg,  rgba(79,207,0, 0.24), rgba(79,207,0, 0.01))",
                                 }}
                             >
-                                <Typography
+                                <AnimatedText
                                     fontSize={20}
                                     textAlign="end"
                                     width="80%"
                                     p={2}
                                     fontFamily={myFont.style.fontFamily}
                                     color={"white"}
+                                    isActive={isActive}
                                 >
                                     {item.text}
-                                </Typography>
+                                </AnimatedText>
                             </div>
                         </div>
                         <Button
@@ -127,15 +133,16 @@ export function Page2() {
                     </Grid>
                 ))}
             </Grid>
-            <Typography
+            <AnimatedText
                 pl="5vw"
                 pt={15}
                 fontFamily={Font.style.fontFamily}
                 fontSize={28}
                 color="#4FCF00"
+                isActive={isActive}
             >
                 Collaborators
-            </Typography>
+            </AnimatedText>
             <div className="logos">
                 <div className="logo-slide">
                     {colabs.map((image, index) => (

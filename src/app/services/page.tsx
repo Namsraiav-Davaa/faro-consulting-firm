@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import localFont from "next/font/local";
 import React from "react";
 import Img1 from "../../../public/detail-services/service1.png";
@@ -10,6 +10,7 @@ import Img4 from "../../../public/detail-services/service4.png";
 import Img5 from "../../../public/detail-services/service5.png";
 import Image from "next/image";
 import { Footer } from "../footer";
+import { AnimatedText } from "component/components/animatedText";
 
 const thinFont = localFont({ src: "../../styles/fonts/SharpSansLight.otf" });
 const myFont = localFont({ src: "../../styles/fonts/SharpSansBold.otf" });
@@ -70,15 +71,15 @@ const services = [
 export default function SerVicesPage() {
     return (
         <Box pt={30}>
-            <Typography
+            <AnimatedText
                 fontSize={66}
                 color={"#ffffff"}
                 fontFamily={myFont.style.fontFamily}
                 textAlign="center"
             >
                 Our <span style={{ color: "#4FCF00" }}>services</span>
-            </Typography>
-            <Typography
+            </AnimatedText>
+            <AnimatedText
                 fontSize={24}
                 fontFamily={thinFont.style.fontFamily}
                 textAlign="center"
@@ -91,7 +92,7 @@ export default function SerVicesPage() {
                 public-private partnerships. We use our knowledge and experience
                 to help our clients achieve their goals through strategic
                 planning and sound analysis.
-            </Typography>
+            </AnimatedText>
             <Grid
                 sx={{
                     display: { xs: "none", md: "flex" },
@@ -132,7 +133,7 @@ export default function SerVicesPage() {
                                                     "linear-gradient(0deg,  rgba(79,207,0, 0.24), rgba(79,207,0, 0.01))",
                                             }}
                                         >
-                                            <Typography
+                                            <AnimatedText
                                                 fontSize={30}
                                                 textAlign="end"
                                                 width="90%"
@@ -143,7 +144,7 @@ export default function SerVicesPage() {
                                                 color={"white"}
                                             >
                                                 {item.text}
-                                            </Typography>
+                                            </AnimatedText>
                                         </div>
                                     </div>
                                 </Grid>
@@ -181,7 +182,7 @@ export default function SerVicesPage() {
                                                         alt="Picture of the author"
                                                     />
                                                 </div>
-                                                <Typography
+                                                <AnimatedText
                                                     mr={2}
                                                     width="90%"
                                                     fontFamily={
@@ -193,7 +194,7 @@ export default function SerVicesPage() {
                                                     color="white"
                                                 >
                                                     {text}
-                                                </Typography>
+                                                </AnimatedText>
                                             </div>
                                         ))}
                                     </Box>
@@ -240,7 +241,7 @@ export default function SerVicesPage() {
                                                         alt="Picture of the author"
                                                     />
                                                 </div>
-                                                <Typography
+                                                <AnimatedText
                                                     mr={2}
                                                     fontFamily={
                                                         thinFont.style
@@ -251,7 +252,7 @@ export default function SerVicesPage() {
                                                     color="white"
                                                 >
                                                     {text}
-                                                </Typography>
+                                                </AnimatedText>
                                             </div>
                                         ))}
                                     </Box>
@@ -280,7 +281,7 @@ export default function SerVicesPage() {
                                                     "linear-gradient(0deg,  rgba(79,207,0, 0.24), rgba(79,207,0, 0.01))",
                                             }}
                                         >
-                                            <Typography
+                                            <AnimatedText
                                                 fontSize={30}
                                                 textAlign="end"
                                                 width="90%"
@@ -291,7 +292,7 @@ export default function SerVicesPage() {
                                                 color={"white"}
                                             >
                                                 {item.text}
-                                            </Typography>
+                                            </AnimatedText>
                                         </div>
                                     </div>
                                 </Grid>
@@ -333,7 +334,7 @@ export default function SerVicesPage() {
                                         "linear-gradient(0deg,  rgba(79,207,0, 0.24), rgba(79,207,0, 0.01))",
                                 }}
                             >
-                                <Typography
+                                <AnimatedText
                                     fontSize={30}
                                     textAlign="end"
                                     width="90%"
@@ -342,7 +343,7 @@ export default function SerVicesPage() {
                                     color={"white"}
                                 >
                                     {item.text}
-                                </Typography>
+                                </AnimatedText>
                             </div>
                         </div>
                         <div style={{ marginTop: "40px", marginLeft: "20px" }}>
@@ -370,7 +371,7 @@ export default function SerVicesPage() {
                                             alt="Picture of the author"
                                         />
                                     </div>
-                                    <Typography
+                                    <AnimatedText
                                         mr={2}
                                         width="80%"
                                         fontFamily={thinFont.style.fontFamily}
@@ -379,7 +380,7 @@ export default function SerVicesPage() {
                                         color="white"
                                     >
                                         {text}
-                                    </Typography>
+                                    </AnimatedText>
                                 </div>
                             ))}
                         </div>

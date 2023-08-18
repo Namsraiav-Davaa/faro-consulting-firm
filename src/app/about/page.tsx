@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid } from "@mui/material";
 import React from "react";
 import localFont from "next/font/local";
 import Image from "next/image";
@@ -8,6 +8,7 @@ import { Card, CardMedia } from "@mui/material";
 import Img from "../../public/needConsulting.png";
 import { Footer } from "../footer";
 import { makeStyles } from "@material-ui/core/styles";
+import { AnimatedText } from "component/components/animatedText";
 
 const myFont = localFont({ src: "../../styles/fonts/SharpSansBold.otf" });
 const mediumFont = localFont({ src: "../../styles/fonts/SharpSans.otf" });
@@ -104,23 +105,23 @@ export default function AboutPage() {
                 sx={{ alignItems: "center" }}
             >
                 <Box display="flex" flexDirection="row">
-                    <Typography
+                    <AnimatedText
                         fontSize={66}
                         color={"#ffffff"}
                         fontFamily={myFont.style.fontFamily}
                     >
                         About
-                    </Typography>
-                    <Typography
+                    </AnimatedText>
+                    <AnimatedText
                         fontSize={66}
                         ml={"15px"}
                         color={"#4FCF00"}
                         fontFamily={myFont.style.fontFamily}
                     >
                         us
-                    </Typography>
+                    </AnimatedText>
                 </Box>
-                <Typography
+                <AnimatedText
                     fontFamily={mediumFont.style.fontFamily}
                     fontSize={24}
                     width={"90%"}
@@ -130,7 +131,18 @@ export default function AboutPage() {
                 >
                     We bring an entrepreneurial mindset to your toughest
                     challenges, building businesses that redefine indsutries.
-                </Typography>
+                </AnimatedText>
+                {/* <AnimatedText
+                    fontFamily={mediumFont.style.fontFamily}
+                    fontSize={24}
+                    width={"90%"}
+                    textAlign={"center"}
+                    color={"#ffffff"}
+                    className={classes.widthMd}
+                >
+                    We bring an entrepreneurial mindset to your toughest
+                    challenges, building businesses that redefine indsutries.
+                </AnimatedText> */}
                 <Grid container display="flex" flexDirection="row" width="100%">
                     <Grid
                         sm={12}
@@ -162,7 +174,7 @@ export default function AboutPage() {
                         alignItems="center"
                         justifyContent="center"
                     >
-                        <Typography
+                        <AnimatedText
                             fontFamily={thinFont.style.fontFamily}
                             width="90%"
                             fontWeight="10"
@@ -177,7 +189,7 @@ export default function AboutPage() {
                             talented and diverse group of colleagues, and to
                             helping our clients create meaningful and lasting
                             change.
-                        </Typography>
+                        </AnimatedText>
                         <Button
                             variant="outlined"
                             sx={{
@@ -196,23 +208,23 @@ export default function AboutPage() {
                     </Grid>
                 </Grid>
                 <Box display="flex" flexDirection="row">
-                    <Typography
+                    <AnimatedText
                         fontSize={66}
                         color={"#ffffff"}
                         fontFamily={myFont.style.fontFamily}
                     >
                         Why choose
-                    </Typography>
-                    <Typography
+                    </AnimatedText>
+                    <AnimatedText
                         fontSize={66}
                         ml={"15px"}
                         color={"#4FCF00"}
                         fontFamily={myFont.style.fontFamily}
                     >
                         us
-                    </Typography>
+                    </AnimatedText>
                 </Box>
-                <Typography
+                <AnimatedText
                     fontFamily={mediumFont.style.fontFamily}
                     fontSize={24}
                     width={"90%"}
@@ -222,7 +234,7 @@ export default function AboutPage() {
                 >
                     We help businesses create a more sustainable and inclusive
                     future.
-                </Typography>
+                </AnimatedText>
                 <Grid
                     container
                     display="flex"
@@ -240,14 +252,14 @@ export default function AboutPage() {
                         flexDirection="column"
                         width="50%"
                     >
-                        <Typography
+                        <AnimatedText
                             fontSize={54}
                             color={"#ffffff"}
                             fontFamily={myFont.style.fontFamily}
                         >
                             Process
-                        </Typography>
-                        <Typography
+                        </AnimatedText>
+                        <AnimatedText
                             fontFamily={thinFont.style.fontFamily}
                             width="70%"
                             align="justify"
@@ -260,7 +272,7 @@ export default function AboutPage() {
                             relations and business partnerships. They use these
                             strategies to create solutions for market entry,
                             expansion, and risk management.
-                        </Typography>
+                        </AnimatedText>
                         <Button
                             variant="outlined"
                             sx={{
@@ -304,7 +316,7 @@ export default function AboutPage() {
                                     alt="Picture of the author"
                                 />
                                 <Box ml="30px">
-                                    <Typography
+                                    <AnimatedText
                                         fontFamily={myFont.style.fontFamily}
                                         width="70%"
                                         align="justify"
@@ -313,8 +325,8 @@ export default function AboutPage() {
                                         fontSize={22}
                                     >
                                         {item.title}
-                                    </Typography>
-                                    <Typography
+                                    </AnimatedText>
+                                    <AnimatedText
                                         mt="20px"
                                         fontFamily={thinFont.style.fontFamily}
                                         width="70%"
@@ -324,7 +336,7 @@ export default function AboutPage() {
                                         fontSize={18}
                                     >
                                         {item.desc}
-                                    </Typography>
+                                    </AnimatedText>
                                 </Box>
                             </Box>
                         ))}
@@ -346,7 +358,7 @@ export default function AboutPage() {
                     sx={{ zIndex: 10, position: "relative" }}
                 >
                     <Box display="flex">
-                        <Typography
+                        <AnimatedText
                             fontFamily={myFont.style.fontFamily}
                             // fontSize={100}
                             display="flex"
@@ -354,8 +366,8 @@ export default function AboutPage() {
                             sx={txtStyle.responsiveText}
                         >
                             Need
-                        </Typography>
-                        <Typography
+                        </AnimatedText>
+                        <AnimatedText
                             fontFamily={myFont.style.fontFamily}
                             // fontSize={100}
                             ml={3}
@@ -364,8 +376,8 @@ export default function AboutPage() {
                             sx={txtStyle.responsiveText}
                         >
                             consult
-                        </Typography>
-                        <Typography
+                        </AnimatedText>
+                        <AnimatedText
                             fontFamily={myFont.style.fontFamily}
                             // fontSize={100}
                             display="flex"
@@ -373,9 +385,9 @@ export default function AboutPage() {
                             sx={txtStyle.responsiveText}
                         >
                             ing
-                        </Typography>
+                        </AnimatedText>
                     </Box>
-                    <Typography
+                    <AnimatedText
                         fontFamily={semiboldFont.style.fontFamily}
                         fontSize={20}
                         display="flex"
@@ -383,7 +395,7 @@ export default function AboutPage() {
                         color="#FFFFFF"
                     >
                         Let us guide you!
-                    </Typography>
+                    </AnimatedText>
                 </Box>
             </div>
             <Footer />

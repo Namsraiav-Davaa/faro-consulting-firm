@@ -1,11 +1,12 @@
-import { Button, Grid, TextField, Typography } from "@mui/material";
+import { Button, Grid, TextField } from "@mui/material";
 import localFont from "next/font/local";
 import { makeStyles } from "@mui/styles";
 import { Footer } from "../footer";
+import { AnimatedText } from "component/components/animatedText";
 
 const thinFont = localFont({ src: "../../styles/fonts/SharpSansLight.otf" });
 
-export function Page5() {
+export function Page5({ isActive }: { isActive: boolean }) {
     const useStyles = makeStyles((theme) => ({
         root: {
             "& label.Mui-focused": {
@@ -187,15 +188,16 @@ export function Page5() {
                         >
                             Submit
                         </Button>
-                        <Typography
+                        <AnimatedText
                             fontSize={14}
                             color="white"
                             my={5}
                             mt={4}
+                            isActive={isActive}
                             fontFamily={thinFont.style.fontFamily}
                         >
                             *Required field
-                        </Typography>
+                        </AnimatedText>
                     </Grid>
                 </Grid>
                 <Grid xs={0} lg={5} xl={5}></Grid>
